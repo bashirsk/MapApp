@@ -7,15 +7,12 @@
 //
 
 import UIKit
-import MapKit
-import Foundation
 
 class Restaurant: NSObject, Decodable {
-    
     let name: String
     let latitude: String
     let longitude: String
-    let body: String
+    let body: String?
     let deliveryLink: String?
     
     init(name: String, latitude: String, longitude: String, body: String, deliveryLink: String) {
@@ -26,7 +23,7 @@ class Restaurant: NSObject, Decodable {
         self.deliveryLink = deliveryLink
         super.init()
     }
-        
+    
     private enum CodingKeys: String, CodingKey {
         case deliveryLink = "delivery_link"
         case name

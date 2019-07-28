@@ -12,7 +12,7 @@ class APIService {
     
     class func fetchRestaurantData(completion pCompletion: @escaping ([Restaurant]?, Error?) -> Void) {
         guard let url = URL(string: "https://www.frankieandbennys.com/trg_restaurant_feed/JSON") else { return }        
-        URLSession.shared.dataTask(with: url) { (pData, _, pError) in
+        URLSession.shared.dataTask(with: url) { (pData, _, _) in
             guard let data = pData else { return }
             do {
                 let results = try JSONDecoder().decode([Restaurant].self, from: data)
@@ -20,6 +20,6 @@ class APIService {
             } catch let decodeError {
                 pCompletion(nil, decodeError)
             }
-        } .resume()
+            } .resume()
     }
 }
