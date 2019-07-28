@@ -8,27 +8,30 @@
 
 import UIKit
 import MapKit
+import Foundation
 
-class Restaurant: NSObject, MKAnnotation {
+class Restaurant: NSObject, Decodable {
     
     let name: String
     let latitude: String
     let longitude: String
     let body: String
     let deliveryLink: String?
-    var coordinate: CLLocationCoordinate2D
     
-    init(name: String, latitude: String, longitude: String, body: String, deliveryLink: String, coordinate: CLLocationCoordinate2D) {
+    init(name: String, latitude: String, longitude: String, body: String, deliveryLink: String) {
         self.name = name
         self.latitude = latitude
         self.longitude = longitude
         self.body = body
         self.deliveryLink = deliveryLink
-        self.coordinate = coordinate
         super.init()
     }
-    
-    enum CodingKeys: String, CodingKey {
+        
+    private enum CodingKeys: String, CodingKey {
         case deliveryLink = "delivery_link"
+        case name
+        case latitude
+        case longitude
+        case body
     }
 }
