@@ -14,6 +14,7 @@
 		6119331B22ED9119004CAC48 /* RestaurantsLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6119331A22ED9119004CAC48 /* RestaurantsLocationViewController.swift */; };
 		6119332022ED9D11004CAC48 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6119331F22ED9D11004CAC48 /* Restaurant.swift */; };
 		6119332322EDA217004CAC48 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6119332222EDA217004CAC48 /* APIService.swift */; };
+		61C9742F22EDDB6D00D6536A /* String+MA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C9742E22EDDB6D00D6536A /* String+MA.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		6119331A22ED9119004CAC48 /* RestaurantsLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantsLocationViewController.swift; sourceTree = "<group>"; };
 		6119331F22ED9D11004CAC48 /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		6119332222EDA217004CAC48 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		61C9742E22EDDB6D00D6536A /* String+MA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+MA.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				6119332122EDA1E6004CAC48 /* API */,
 				6119331C22ED9CCF004CAC48 /* Models */,
 				6119331922ED90B3004CAC48 /* ViewControllers */,
+				61C9742D22EDDB4800D6536A /* Extensions */,
 				6119330722ED8BF5004CAC48 /* AppDelegate.swift */,
 				6119330B22ED8BF5004CAC48 /* Main.storyboard */,
 				6119330E22ED8BF7004CAC48 /* Assets.xcassets */,
@@ -92,6 +95,14 @@
 				6119332222EDA217004CAC48 /* APIService.swift */,
 			);
 			path = API;
+			sourceTree = "<group>";
+		};
+		61C9742D22EDDB4800D6536A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				61C9742E22EDDB6D00D6536A /* String+MA.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -168,6 +179,7 @@
 				6119331B22ED9119004CAC48 /* RestaurantsLocationViewController.swift in Sources */,
 				6119330822ED8BF5004CAC48 /* AppDelegate.swift in Sources */,
 				6119332322EDA217004CAC48 /* APIService.swift in Sources */,
+				61C9742F22EDDB6D00D6536A /* String+MA.swift in Sources */,
 				6119332022ED9D11004CAC48 /* Restaurant.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

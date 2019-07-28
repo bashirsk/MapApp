@@ -12,12 +12,14 @@ import MapKit
 class RestaurantsLocationViewController: UIViewController {
     
     @IBOutlet weak var mapView: MKMapView!
-        
+    
+    var restaurants: [Restaurant] = []
+    
     let locationManager = CLLocationManager()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        locationManager.delegate = self
+        mapView.delegate = self
         checkLocationAuthorizationStatus { (pGranted) in
             if pGranted {
                 self.mapView.showsUserLocation = true
@@ -25,8 +27,34 @@ class RestaurantsLocationViewController: UIViewController {
                 self.locationManager.requestWhenInUseAuthorization()
             }
         }
+        fetchRestuarants()
     }
     
+    //MARK:- Fetch data from API
+    
+    func fetchRestuarants() {
+        APIService.fetchRestaurantData { (pRestaurants, pError) in
+            if pError == nil {
+                if let theRestaurants = pRestaurants {
+                    self.restaurants = theRestaurants
+                    self.createAnnotations()
+                }
+            }
+        }
+    }
+    
+    //MARK:- Annotations
+    
+    func createAnnotations() {
+        restaurants.forEach { (pRestaurant) in
+            let annotations = MKPointAnnotation()
+            annotations.title = pRestaurant.name
+            annotations.coordinate = CLLocationCoordinate2D(latitude: pRestaurant.latitude.ma_toDouble, longitude: pRestaurant.longitude.ma_toDouble)
+            mapView.addAnnotation(annotations)
+        }
+    }
+    
+    //MARK:- Location Permissions
     func checkLocationAuthorizationStatus(completion pCompletion: @escaping (Bool) -> Void) {
         switch CLLocationManager.authorizationStatus() {
         case .authorizedWhenInUse:
@@ -38,4 +66,23 @@ class RestaurantsLocationViewController: UIViewController {
     }
 }
 
-extension RestaurantsLocationViewController: CLLocationManagerDelegate {}
+
+//MARK:- MapView Delegate
+
+extension RestaurantsLocationViewController: MKMapViewDelegate {
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        guard annotation is MKPointAnnotation else { return nil }
+        
+        let identifier = "Annotation Pin"
+        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
+        
+        if annotationView == nil {
+            annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+            annotationView!.canShowCallout = true
+        } else {
+            annotationView!.annotation = annotation
+        }
+        return annotationView
+    }
+}
