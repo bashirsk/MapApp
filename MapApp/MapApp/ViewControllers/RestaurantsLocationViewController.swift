@@ -87,7 +87,7 @@ extension RestaurantsLocationViewController: MKMapViewDelegate {
             button.addTarget(self, action: #selector(goToDetailScreen(sender:)), for: .touchUpInside)
             annotationView?.rightCalloutAccessoryView = button
         } else {
-            annotationView!.annotation = annotation
+            annotationView?.annotation = annotation
         }
         return annotationView
     }
