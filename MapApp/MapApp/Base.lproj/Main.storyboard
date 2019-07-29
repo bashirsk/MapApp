@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qNn-8D-s59">
-    <device id="retina6_1" orientation="portrait">
+    <device id="retina6_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -40,4 +40,5 @@
             <point key="canvasLocation" x="73.913043478260875" y="128.57142857142856"/>
         </scene>
     </scenes>
+    <color key="tintColor" red="0.68627450980000004" green="0.59215686270000001" blue="0.28627450980000002" alpha="1" colorSpace="calibratedRGB"/>
 </document>

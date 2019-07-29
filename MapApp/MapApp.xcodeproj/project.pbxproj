@@ -15,6 +15,8 @@
 		6119332022ED9D11004CAC48 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6119331F22ED9D11004CAC48 /* Restaurant.swift */; };
 		6119332322EDA217004CAC48 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6119332222EDA217004CAC48 /* APIService.swift */; };
 		61C9742F22EDDB6D00D6536A /* String+MA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C9742E22EDDB6D00D6536A /* String+MA.swift */; };
+		61C9743922EDF47600D6536A /* UIColor+MA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C9743822EDF47600D6536A /* UIColor+MA.swift */; };
+		61C9743B22EDF50C00D6536A /* UIView+MA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C9743A22EDF50C00D6536A /* UIView+MA.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		6119331F22ED9D11004CAC48 /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		6119332222EDA217004CAC48 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		61C9742E22EDDB6D00D6536A /* String+MA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+MA.swift"; sourceTree = "<group>"; };
+		61C9743822EDF47600D6536A /* UIColor+MA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+MA.swift"; sourceTree = "<group>"; };
+		61C9743A22EDF50C00D6536A /* UIView+MA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+MA.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +105,8 @@
 			isa = PBXGroup;
 			children = (
 				61C9742E22EDDB6D00D6536A /* String+MA.swift */,
+				61C9743822EDF47600D6536A /* UIColor+MA.swift */,
+				61C9743A22EDF50C00D6536A /* UIView+MA.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -180,6 +186,8 @@
 				6119330822ED8BF5004CAC48 /* AppDelegate.swift in Sources */,
 				6119332322EDA217004CAC48 /* APIService.swift in Sources */,
 				61C9742F22EDDB6D00D6536A /* String+MA.swift in Sources */,
+				61C9743B22EDF50C00D6536A /* UIView+MA.swift in Sources */,
+				61C9743922EDF47600D6536A /* UIColor+MA.swift in Sources */,
 				6119332022ED9D11004CAC48 /* Restaurant.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

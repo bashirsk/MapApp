@@ -9,7 +9,7 @@
 import UIKit
 
 class Restaurant: NSObject, Decodable {
-    let name: String
+    var name: String
     let latitude: String
     let longitude: String
     let body: String?

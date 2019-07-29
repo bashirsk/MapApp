@@ -16,6 +16,7 @@ class RestaurantsLocationViewController: UIViewController {
     var restaurants: [Restaurant] = []
     
     let locationManager = CLLocationManager()
+    private let kNextSegue = "NextSegue"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,7 +64,7 @@ class RestaurantsLocationViewController: UIViewController {
         default:
             pCompletion(false)
         }
-    }
+    }    
 }
 
 
@@ -80,9 +81,18 @@ extension RestaurantsLocationViewController: MKMapViewDelegate {
         if annotationView == nil {
             annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
             annotationView!.canShowCallout = true
+            let button = UIButton(frame: CGRect(origin: .zero, size: CGSize(width: 30, height: 30)))
+            button.ma_addCornerRadius(8)
+            button.backgroundColor = .ma_goldColor
+            button.addTarget(self, action: #selector(goToDetailScreen(sender:)), for: .touchUpInside)
+            annotationView?.rightCalloutAccessoryView = button
         } else {
             annotationView!.annotation = annotation
         }
         return annotationView
+    }
+    
+    @objc func goToDetailScreen(sender pSender: UIButton) {
+        performSegue(withIdentifier: kNextSegue, sender: self)
     }
 }
