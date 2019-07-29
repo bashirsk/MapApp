@@ -80,7 +80,7 @@ extension RestaurantsLocationViewController: MKMapViewDelegate {
         
         if annotationView == nil {
             annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
-            annotationView!.canShowCallout = true
+            annotationView?.canShowCallout = true
             let button = UIButton(frame: CGRect(origin: .zero, size: CGSize(width: 30, height: 30)))
             button.ma_addCornerRadius(8)
             button.backgroundColor = .ma_goldColor
