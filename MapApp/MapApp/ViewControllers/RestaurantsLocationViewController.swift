@@ -93,6 +93,7 @@ extension RestaurantsLocationViewController: MKMapViewDelegate {
     }
     
     @objc func goToDetailScreen(sender pSender: UIButton) {
+        // TODO
         performSegue(withIdentifier: kNextSegue, sender: self)
     }
 }
